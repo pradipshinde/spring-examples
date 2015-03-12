@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	
+	
+	<!--
+	
+	In Spring, bean scope is used to decide which type of bean instance should be 
+	return from Spring container back to the caller.
+
+	5 types of bean scopes supported :
+
+	1.singleton – Return a single bean instance per Spring IoC container
+	2.prototype – Return a new bean instance each time when requested
+	3.request – Return a single bean instance per HTTP request. *
+	4.session – Return a single bean instance per HTTP session. *
+	5.globalSession – Return a single bean instance per global HTTP session. *
+	
+	In most cases, you may only deal with the Spring’s core scope – singleton and prototype, 
+	and the default scope is singleton.
+
+	P.S * means only valid in the context of a web-aware Spring ApplicationContext
+	 
+	 -->
+	
+
+	<bean id="studentBean" class="com.pradip.bean.scopes.Student"> 
+	</bean>
+	
+	<!-- <bean id="studentBean" class="com.pradip.bean.scopes.Student" scope="prototype"> 
+	</bean>
+	 -->
+	 
+	</beans>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	
+	
+	<!--
+	you just need to change the Spring XML file for a different output generator.
+	When output changed, you need to modify the Spring XML file only, no code changed, 
+	means less error.
+	 -->
+	
+	<bean id="helperBean" class="com.pradip.looselycoupled.OutputHelper"> 
+	<property name="outputGenerator" ref="xmlBean"></property>
+	</bean>
+	
+	<bean id="jsonBean" class="com.pradip.looselycoupled.JsonOutputGenerator"></bean>
+	
+	<bean id="xmlBean" class="com.pradip.looselycoupled.XmlOutputGenerator"></bean>
+	
+	
+	</beans>

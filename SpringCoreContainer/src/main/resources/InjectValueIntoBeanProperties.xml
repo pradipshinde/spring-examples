@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	
+	
+	<!-- 
+	In Spring, there are three ways to inject value into bean properties.
+	1.Normal way
+	
+	2.Shortcut
+	
+	3.“p” schema
+	 -->	
+	
+	<!-- Noraml Way  -->
+	<bean id="helloBean" class="com.pradip.properties.inject.Student"> 
+	<property name="name">
+	<value>Pradip</value>
+	</property>
+	</bean>
+	
+	<!-- Shortcut  -->
+	<bean id="helloBean1" class="com.pradip.properties.inject.Student"> 
+	<property name="name" value="Aditi">
+	</property>
+	</bean>
+	
+	<!-- "p" schema  -->
+	<bean id="helloBean2" class="com.pradip.properties.inject.Student" p:name="Swaraj">
+	
+	
+	</bean>
+	
+	</beans>
