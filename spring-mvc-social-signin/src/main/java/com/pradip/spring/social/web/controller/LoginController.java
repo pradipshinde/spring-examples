@@ -14,7 +14,7 @@ public class LoginController {
 	public String welcome()
 	{
 		System.out.println("Login Controller called");
-		return "login";
+		return "loginPage";
 	}
 	
 }

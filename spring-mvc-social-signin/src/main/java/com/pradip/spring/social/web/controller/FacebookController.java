@@ -46,7 +46,7 @@ public class FacebookController {
 		return "redirect:"+authService.getAuthorizationUrl(EMPTY_TOKEN);
 		}
 		
-		return "welcomePage";
+		return "homePage";
 	}
 	
 	@RequestMapping(value={"/facebook-callback"} , method=RequestMethod.GET)
@@ -63,7 +63,7 @@ public class FacebookController {
 		Token accessToken=authService.getAccessToken(requestToken, verifier);
 		
 		// store access token as a session attribute
-		request.setAttribute(ATTR_OAUTH_ACCESS_TOKEN,verifier, SCOPE_SESSION);
+		request.setAttribute(ATTR_OAUTH_ACCESS_TOKEN,accessToken, SCOPE_SESSION);
 		
 		// getting user profile
 		OAuthRequest oauthRequest = new OAuthRequest(Verb.GET, "https://graph.facebook.com/me");
@@ -72,9 +72,12 @@ public class FacebookController {
 		System.out.println(oauthResponse.getBody());
 		
 		//ModelAndView mav = new ModelAndView("redirect:pradip");
+		
 		ModelAndView mav = new ModelAndView("homePage");
+		mav.addObject("info", oauthResponse.getBody());
 		return mav;
 		
 	}
+	
 	
 }
