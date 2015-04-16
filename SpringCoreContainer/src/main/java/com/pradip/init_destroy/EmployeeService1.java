@@ -1,7 +1,5 @@
 package com.pradip.init_destroy;
 
-import javax.annotation.PostConstruct;
-import javax.annotation.PreDestroy;
 
 /**
  * @author Pradip
